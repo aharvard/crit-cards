@@ -18,6 +18,7 @@ body {
           flex-direction: column;
   font-family: "Source Sans Pro", sans-serif;
   min-height: 100vh;
+  padding: 1rem;
 }
 
 button {
@@ -28,6 +29,10 @@ button {
   font-size: 1rem;
   margin: 1rem 0;
   padding: 1rem;
+}
+
+footer {
+  text-align: center;
 }
 
 .card {
