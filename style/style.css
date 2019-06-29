@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:600&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  min-height: 100vh;
+  font-family: "Source Sans Pro", sans-serif;
+  background: #f1f0ef;
+}
+
+.card {
+  background: white;
+  width: 20rem;
+  height: 30rem;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  -webkit-box-shadow: 0 10px 40px -20px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 10px 40px -20px rgba(0, 0, 0, 0.5);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: auto 8rem 1fr auto;
+      grid-template-rows: auto 8rem 1fr auto;
+}
+
+.card * {
+  -webkit-transition: opacity 250ms ease;
+  transition: opacity 250ms ease;
+}
+
+.card.drawing {
+  -webkit-animation: spin 500ms ease forwards;
+          animation: spin 500ms ease forwards;
+}
+
+.card.drawing * {
+  opacity: 0;
+}
+
+.card-start {
+  --color: black;
+}
+
+.card-brand {
+  --color: #f04e67;
+}
+
+.card-function {
+  --color: #f38420;
+}
+
+.card-objectives {
+  --color: #098fc7;
+}
+
+.card-content {
+  --color: #c0b931;
+}
+
+.card-visual-language {
+  --color: #f8b618;
+}
+
+.card-user {
+  --color: #24a8b2;
+}
+
+.card-wild-card {
+  --color: #9c71b1;
+}
+
+.card-experience {
+  --color: #77909d;
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+#cardCategory {
+  text-transform: uppercase;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  letter-spacing: 0.2rem;
+  font-size: 0.8rem;
+  -webkit-transform: translatey(1rem);
+          transform: translatey(1rem);
+}
+
+#cardCategory::after {
+  content: "";
+  width: 2rem;
+  height: 0.25rem;
+  background: var(--color);
+  display: block;
+  margin: 0.5rem auto;
+}
+
+#cardQuestion {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.cardExample {
+  font-size: 1rem;
+}
+
+.cardCorner {
+  font-size: 2rem;
+  color: var(--color);
+  text-transform: capitalize;
+}
+
+.cardCorner ~ .cardCorner {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+/*# sourceMappingURL=style.css.map */

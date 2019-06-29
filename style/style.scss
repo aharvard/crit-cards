@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:600&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  min-height: 100vh;
+  font-family: "Source Sans Pro", sans-serif;
+  background: #f1f0ef;
+  // overflow: hidden;
+}
+
+.card {
+  background: white;
+  width: 20rem;
+  height: 30rem;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 10px 40px -20px rgba(0, 0, 0, 0.5);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 8rem 1fr auto;
+
+  * {
+    transition: opacity 250ms ease;
+  }
+
+  &.drawing {
+    animation: spin 500ms ease forwards;
+    * {
+      opacity: 0;
+    }
+  }
+
+  &-start {
+    --color: black;
+  }
+  &-brand {
+    --color: #f04e67;
+  }
+  &-function {
+    --color: #f38420;
+  }
+  &-objectives {
+    --color: #098fc7;
+  }
+  &-content {
+    --color: #c0b931;
+  }
+  &-visual-language {
+    --color: #f8b618;
+  }
+  &-user {
+    --color: #24a8b2;
+  }
+  &-wild-card {
+    --color: #9c71b1;
+  }
+  &-experience {
+    --color: #77909d;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#cardCategory {
+  text-transform: uppercase;
+  align-self: center;
+  justify-self: center;
+  letter-spacing: 0.2rem;
+  font-size: 0.8rem;
+  transform: translatey(1rem);
+  &::after {
+    content: "";
+    width: 2rem;
+    height: 0.25rem;
+    background: var(--color);
+    display: block;
+    margin: 0.5rem auto;
+  }
+}
+
+#cardQuestion {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.cardExample {
+  font-size: 1rem;
+}
+
+.cardCorner {
+  font-size: 2rem;
+  color: var(--color);
+  text-transform: capitalize;
+  & ~ & {
+    transform: rotate(180deg);
+  }
+}
