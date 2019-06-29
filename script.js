@@ -78,7 +78,7 @@ const cards = [
   },
   {
     category: "visual language",
-    question: "Hoe does the hierarchy of the typography feel?",
+    question: "How does the hierarchy of the typography feel?",
     example: "(scale/weight/upper-case?)"
   },
   {
@@ -117,7 +117,7 @@ const cards = [
   {
     category: "user",
     question:
-      "What is the user's expecatoin or mental model of what happens next?"
+      "What is the user's expectation or mental model of what happens next?"
   },
   {
     category: "user",
