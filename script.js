@@ -160,7 +160,7 @@ const cardBottomCorner = document.getElementById("cardBottomCorner");
 
 card.className = "card card-start";
 cardCategory.innerHTML = "category";
-cardQuestion.innerHTML = "pick a card" + card;
+cardQuestion.innerHTML = "pick a card";
 cardTopCorner.innerHTML = "js";
 cardBottomCorner.innerHTML = "js";
 

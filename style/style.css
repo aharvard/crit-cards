@@ -5,6 +5,10 @@
 }
 
 body {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #f1f0ef;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -12,22 +16,23 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  min-height: 100vh;
   font-family: "Source Sans Pro", sans-serif;
-  background: #f1f0ef;
+  min-height: 100vh;
+}
+
+button {
+  background: #222;
+  border-radius: 0.25em;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  margin: 1rem 0;
+  padding: 1rem;
 }
 
 .card {
   background: white;
-  width: 20rem;
-  height: 30rem;
   border-radius: 1rem;
-  padding: 1.5rem;
   -webkit-box-shadow: 0 10px 40px -20px rgba(0, 0, 0, 0.5);
           box-shadow: 0 10px 40px -20px rgba(0, 0, 0, 0.5);
   display: -ms-grid;
@@ -36,6 +41,9 @@ body {
       grid-template-columns: 1fr;
   -ms-grid-rows: auto 8rem 1fr auto;
       grid-template-rows: auto 8rem 1fr auto;
+  height: 30rem;
+  padding: 1.5rem;
+  width: 20rem;
 }
 
 .card * {
@@ -111,25 +119,25 @@ body {
 }
 
 #cardCategory {
-  text-transform: uppercase;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+  font-size: 0.8rem;
   -ms-grid-column-align: center;
       justify-self: center;
   letter-spacing: 0.2rem;
-  font-size: 0.8rem;
-  -webkit-transform: translatey(1rem);
-          transform: translatey(1rem);
+  text-transform: uppercase;
+  -webkit-transform: translateY(1rem);
+          transform: translateY(1rem);
 }
 
 #cardCategory::after {
-  content: "";
-  width: 2rem;
-  height: 0.25rem;
   background: var(--color);
+  content: "";
   display: block;
+  height: 0.25rem;
   margin: 0.5rem auto;
+  width: 2rem;
 }
 
 #cardQuestion {
