@@ -129,6 +129,62 @@ const cards = [
     expectation: "(Curious? Frustrated? Excited? Needing Validation?)"
   },
   {
+    category: "wild card",
+    question:
+      "What is the problem we are solving and does the design address it?"
+  },
+  {
+    category: "wild card",
+    question:
+      "Where in the design is the most likely place for users to have a problem?"
+  },
+  {
+    category: "wild card",
+    question:
+      'What is the user\'s "AHA" moment within this design for them to perform the next task?'
+  },
+  {
+    category: "wild card",
+    question:
+      "Does the design reject established design patterns? If so, can you justify your decisions?"
+  },
+  {
+    category: "wild card",
+    question:
+      "What would motivate your users to invest more time and attention?"
+  },
+  {
+    category: "wild card",
+    question: "How do YOU feel about the design?"
+  },
+  {
+    category: "wild card",
+    question: 'What is the user\'s "Ooooh" moment?',
+    example: "(The part which delights the user.)"
+  },
+  {
+    category: "experience",
+    question: "Is it clear what tasks the user has to perform?"
+  },
+  {
+    category: "experience",
+    question:
+      "How does the speed of out application compare to our competitors?"
+  },
+  {
+    category: "experience",
+    question: "What makes this experience different from another on the market?"
+  },
+  {
+    category: "experience",
+    question: "What in the design invites and encourages use?"
+  },
+  {
+    category: "experience",
+    question:
+      "Is it easy to understand how to perform the tasks set for the user?"
+  },
+  {
     category: "content",
     question: "What is the content hierarchy?"
   },
