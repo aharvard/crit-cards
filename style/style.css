@@ -1,23 +1,238 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:600&display=swap");
+button,
+hr,
+input {
+  overflow: visible;
+}
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+}
+
+progress,
+sub,
+sup {
+  vertical-align: baseline;
+}
+
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+menu,
+article,
+aside,
+details,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+figcaption,
+figure,
+main {
+  display: block;
+}
+
+figure {
+  margin: 1em 40px;
+}
+
+hr {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  height: 0;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+a {
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
+a:active,
+a:hover {
+  outline-width: 0;
+}
+
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+dfn {
+  font-style: italic;
+}
+
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+img {
+  border-style: none;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: sans-serif;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+[type="submit"],
+[type="reset"],
+button,
+html [type="button"] {
+  -webkit-appearance: button;
+}
+
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner,
+button::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring,
+button:-moz-focusring {
+  outline: ButtonText dotted 1px;
+}
+
+fieldset {
+  border: 1px solid silver;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal;
+}
+
+textarea {
+  overflow: auto;
+}
+
+[type="checkbox"],
+[type="radio"] {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+}
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type="search"] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+summary {
+  display: list-item;
+}
+
+[hidden],
+template {
+  display: none;
+}
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
 body {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   background: #f1f0ef;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   font-family: "Source Sans Pro", sans-serif;
-  min-height: 100vh;
   padding: 1rem;
 }
 
@@ -35,133 +250,21 @@ footer {
   text-align: center;
 }
 
+.deck {
+  outline: 1px solid red;
+}
+
 .card {
+  outline: 1px solid blue;
+  margin: 1rem;
+}
+
+.card--moving {
+  background: pink;
+}
+
+.card--active {
   background: white;
-  border-radius: 1rem;
-  -webkit-box-shadow: 0 10px 40px -20px rgba(0, 0, 0, 0.5);
-          box-shadow: 0 10px 40px -20px rgba(0, 0, 0, 0.5);
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-  -ms-grid-rows: auto 8rem 1fr auto;
-      grid-template-rows: auto 8rem 1fr auto;
-  height: 30rem;
-  padding: 1.5rem;
-  width: 20rem;
-}
-
-.card * {
-  -webkit-transition: opacity 250ms ease;
-  transition: opacity 250ms ease;
-}
-
-.card.drawing {
-  -webkit-animation: spin 500ms ease forwards;
-          animation: spin 500ms ease forwards;
-}
-
-.card.drawing * {
-  opacity: 0;
-}
-
-.card-start {
-  --color: black;
-}
-
-.card-brand {
-  --color: #f04e67;
-}
-
-.card-function {
-  --color: #f38420;
-}
-
-.card-objectives {
-  --color: #098fc7;
-}
-
-.card-content {
-  --color: #c0b931;
-}
-
-.card-visual-language {
-  --color: #f8b618;
-}
-
-.card-user {
-  --color: #24a8b2;
-}
-
-.card-wild-card {
-  --color: #9c71b1;
-}
-
-.card-experience {
-  --color: #77909d;
-}
-
-@-webkit-keyframes spin {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-
-@keyframes spin {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-
-#cardCategory {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  font-size: 0.8rem;
-  -ms-grid-column-align: center;
-      justify-self: center;
-  letter-spacing: 0.2rem;
-  text-transform: uppercase;
-  -webkit-transform: translateY(1rem);
-          transform: translateY(1rem);
-}
-
-#cardCategory::after {
-  background: var(--color);
-  content: "";
-  display: block;
-  height: 0.25rem;
-  margin: 0.5rem auto;
-  width: 2rem;
-}
-
-#cardQuestion {
-  text-align: center;
-  font-size: 1.5rem;
-}
-
-.cardExample {
-  font-size: 1rem;
-}
-
-.cardCorner {
-  font-size: 2rem;
-  color: var(--color);
-  text-transform: capitalize;
-}
-
-.cardCorner ~ .cardCorner {
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
+  outline: 1px solid red;
 }
 /*# sourceMappingURL=style.css.map */

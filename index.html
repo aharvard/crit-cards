@@ -5,19 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta charset="UTF-8" />
     <title>Random Crit Card</title>
-    <link rel="stylesheet" href="/style/normalize.css" />
     <link rel="stylesheet" href="/style/style.css" />
   </head>
   <body>
     <h1>Critique Cards</h1>
 
-    <div id="card" class="card card-objectives">
-      <span id="cardTopCorner" class="cardCorner">Xy</span>
-      <span id="cardCategory">Whoops</span>
-      <h2 id="cardQuestion">You need to enable JavaScript to run this app</h2>
-      <span id="cardBottomCorner" class="cardCorner">Xy</span>
+    <div id="deck" class="deck">
+      <div id="cardDeck" class="card card-back">
+        <span class="card-corner">Critique Cards</span>
+        <span class="card-corner">Critique Cards</span>
+      </div>
+
+      <div id="cardOne" class="card card-objectives">
+        <span id="cardOneTopCorner" class="cardCorner">Xy</span>
+        <span id="cardOneCategory">CardOne</span>
+        <h2 id="cardOneQuestion">Card One Question?</h2>
+        <span id="cardOneBottomCorner" class="cardCorner">Xy</span>
+      </div>
+      <div id="cardTwo" class="card">
+        <span id="cardTwoTopCorner" class="cardCorner">Zz</span>
+        <span id="cardTwoCategory">CardTwo</span>
+        <h2 id="cardTwoQuestion">Card Two Question?</h2>
+        <span id="cardTwoBottomCorner" class="cardCorner">Zz</span>
+      </div>
     </div>
-    <button id="button">Change Card</button>
+    <button id="drawButton">Change Card</button>
+
     <footer>
       <p>
         Based on

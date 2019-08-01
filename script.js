@@ -1,3 +1,140 @@
+const deck = document.getElementById("deck");
+const cardOne = document.getElementById("cardOne");
+const cardTwo = document.getElementById("cardTwo");
+const drawButton = document.getElementById("drawButton");
+
+const cardOneCategory = document.getElementById("cardOneCategory");
+const cardOneQuestion = document.getElementById("cardOneQuestion");
+const cardOneTopCorner = document.getElementById("cardOneTopCorner");
+const cardOneBottomCorner = document.getElementById("cardOneBottomCorner");
+
+const cardTwoCategory = document.getElementById("cardTwoCategory");
+const cardTwoQuestion = document.getElementById("cardTwoQuestion");
+const cardTwoTopCorner = document.getElementById("cardTwoTopCorner");
+const cardTwoBottomCorner = document.getElementById("cardTwoBottomCorner");
+
+let critIsActive = false;
+let cardOneActive = false;
+let cardTwoActive = false;
+
+function randomPick(myArray) {
+  return myArray[Math.floor(Math.random() * myArray.length)];
+}
+
+function setCornerText(text) {
+  // cardTopCorner.innerHTML = text;
+  // cardBottomCorner.innerHTML = text;
+}
+
+function setContent(card) {
+  let randomCard = randomPick(cards);
+  // console.log(card);
+  // Set Content for Picked Card
+  // cardCategory.innerHTML = randomCard.category;
+
+  cardTwoActive ? (cardOneQuestion.innerHTML = randomCard.question) : null;
+  cardOneActive ? (cardTwoQuestion.innerHTML = randomCard.question) : null;
+  // console.table(randomCard);
+
+  // if there is randomCard.example
+  // create a paragraph with randomCard.example
+  // if (randomCard.example != undefined) {
+  //   var exampleP = document.createElement("p");
+  //   exampleP.innerHTML = randomCard.example;
+  //   exampleP.className = "cardExample";
+  //   cardQuestion.appendChild(exampleP);
+  // }
+
+  card.className = "card card-" + randomCard.category.replace(/\s/g, "-");
+  switch (randomCard.category) {
+    case "objectives":
+      setCornerText("Ob");
+      break;
+    case "brand":
+      setCornerText("Br");
+      break;
+    case "function":
+      setCornerText("Fn");
+      break;
+    case "objectives":
+      setCornerText("Obj");
+      break;
+    case "content":
+      setCornerText("Cn");
+      break;
+    case "visual language":
+      setCornerText("VL");
+      break;
+    case "user":
+      setCornerText("Usr");
+      break;
+    case "wild card":
+      setCornerText("?");
+      break;
+    case "experience":
+      setCornerText("Exp");
+      break;
+    default:
+      setCornerText("JS");
+  }
+}
+
+function drawCard() {
+  critIsActive === false ? drawFirstCard() : drawAnotherCard();
+  console.log(
+    "cardOne: " + cardOneActive + " | " + "cardTwo: " + cardTwoActive
+  );
+
+  // console.log("critIsActive: " + critIsActive);
+}
+
+function drawFirstCard() {
+  console.log("+++++++++++++++++++ Card One First Draw +++++++++++++++++++");
+  critIsActive = !critIsActive;
+  deck.classList.add("crit--active");
+  setContent(cardOne);
+  cardOneActive = true;
+  moveCard(cardOne);
+  let randomCard = randomPick(cards);
+  cardOneQuestion.innerHTML = randomCard.question;
+}
+
+function drawAnotherCard() {
+  if (cardOneActive === true) {
+    console.log("+++++++++++++++++++ Card Two Draw +++++++++++++++++++");
+    setContent(cardTwo);
+    moveCard(cardTwo);
+    cardOne.classList.remove("card--active");
+    cardOneActive = false;
+    cardTwoActive = true;
+  } else if (cardTwoActive == true) {
+    console.log("+++++++++++++++++++ Card One Draw +++++++++++++++++++");
+    setContent(cardOne);
+    moveCard(cardOne);
+    cardTwo.classList.remove("card--active");
+    cardOneActive = true;
+    cardTwoActive = false;
+  }
+}
+
+function moveCard(cardName) {
+  cardName.classList.add("card--moving");
+  setTimeout(function() {
+    cardName.classList.remove("card--moving");
+    cardName.classList.add("card--active");
+  }, 1000);
+}
+
+// console.log("critIsActive: " + critIsActive);
+console.log("cardOne: " + cardOneActive + " | " + "cardTwo: " + cardTwoActive);
+
+deck.onclick = function() {
+  drawCard();
+};
+drawButton.onclick = function() {
+  drawCard();
+};
+
 const cards = [
   {
     category: "brand",
@@ -207,88 +344,3 @@ const cards = [
       "Is this the best way to communicate this content i.e. text, image, audio, animation, video?"
   }
 ];
-
-const card = document.getElementById("card");
-const cardCategory = document.getElementById("cardCategory");
-const cardQuestion = document.getElementById("cardQuestion");
-const cardTopCorner = document.getElementById("cardTopCorner");
-const cardBottomCorner = document.getElementById("cardBottomCorner");
-
-card.className = "card card-start";
-cardCategory.innerHTML = "category";
-cardQuestion.innerHTML = "pick a card";
-cardTopCorner.innerHTML = "js";
-cardBottomCorner.innerHTML = "js";
-
-function randomPick(myArray) {
-  return myArray[Math.floor(Math.random() * myArray.length)];
-}
-
-function setCornerText(text) {
-  cardTopCorner.innerHTML = text;
-  cardBottomCorner.innerHTML = text;
-}
-
-function drawCard() {
-  let randomCard = randomPick(cards);
-
-  // Add a class for animation
-  card.classList.add("drawing");
-
-  setTimeout(function() {
-    // Set Content for Picked Card
-    cardCategory.innerHTML = randomCard.category;
-    cardQuestion.innerHTML = randomCard.question;
-
-    // if there is randomCard.example
-    // create a paragraph with randomCard.example
-
-    if (randomCard.example != undefined) {
-      var exampleP = document.createElement("p");
-      exampleP.innerHTML = randomCard.example;
-      exampleP.className = "cardExample";
-      cardQuestion.appendChild(exampleP);
-    }
-    console.log(randomCard.example);
-
-    card.className = "card card-" + randomCard.category.replace(/\s/g, "-");
-    switch (randomCard.category) {
-      case "objectives":
-        setCornerText("Ob");
-        break;
-      case "brand":
-        setCornerText("Br");
-        break;
-      case "function":
-        setCornerText("Fn");
-        break;
-      case "objectives":
-        setCornerText("Obj");
-        break;
-      case "content":
-        setCornerText("Cn");
-        break;
-      case "visual language":
-        setCornerText("VL");
-        break;
-      case "user":
-        setCornerText("Usr");
-        break;
-      case "wild card":
-        setCornerText("?");
-        break;
-      case "experience":
-        setCornerText("Exp");
-        break;
-      default:
-        setCornerText("JS");
-    }
-
-    // Remove animation class
-    card.classList.remove("drawing");
-  }, 500);
-}
-
-document.getElementById("button").onclick = function() {
-  drawCard();
-};
