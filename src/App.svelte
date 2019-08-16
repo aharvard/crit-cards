@@ -10,15 +10,8 @@
   $: shuffledCards = [];
   $: playedCards = [];
 
-  // let audio = new Audio("card-flip.mp3");
-  // function flipCard() {
-  //   cardFlipped = !cardFlipped;
-  //   audio.volume = 0.1;
-
-  //   setTimeout(function() {
-  //     audio.play();
-  //   }, 120);
-  // }
+  $: drawCount = 0;
+  $: isShuffled = false;
 
   function shuffle(array) {
     var m = array.length,
@@ -43,39 +36,47 @@
     playedCards = [];
     cardsClone = [...cards];
     shuffle(cardsClone);
-    // let shuffledCards = [...shuffledCards];
-    // console.table("cardsClone: " + cardsClone.length);
+    drawCount = 0;
+    setTimeout;
+    isShuffled = true;
+    setTimeout(() => (isShuffled = false), 750);
   }
 
   function drawCard() {
     shuffledCards = cardsClone;
     playedCards = [...playedCards, shuffledCards[0]];
     shuffledCards.shift();
+    drawCount += 1;
+    isShuffled = false;
   }
 
   onMount(() => {
     shuffle(cardsClone);
+    isShuffled = true;
   });
 </script>
 
 <header>
-  <h1>Critique Cards</h1>
-  <div class="buttons">
-    <button on:click={shuffleCards}>
-      <Icon name="shuffle" />
-      Shuffle
-    </button>
-    <button on:click={drawCard}>
-      <Icon name="drawCard" />
-      Draw
-    </button>
 
-  </div>
+  <button on:click={shuffleCards} style="--button-color: var(--teal);">
+    <Icon name="shuffle" />
+    Shuffle
+  </button>
+  <h1>Critique Cards</h1>
+  <button on:click={drawCard} style="--button-color: var(--pink);">
+    <Icon name="drawCard" />
+    Draw
+  </button>
+
 </header>
 
 <main>
   <div class="deck">
-    <CardBack showBack={true} />
+
+    {#if cardsClone.length > 0}
+      <CardBack showBack={true} shuffledState={isShuffled} />
+    {/if}
+
     {#each playedCards as card, c (card.question.replace(/\s+/g, ''))}
       <Card
         question={card.question}
