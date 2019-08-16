@@ -156,7 +156,7 @@ export const cards = [
     categoryFull: "user",
     categoryShort: "Usr",
     question: "What is the user's current emotional state?",
-    expectation: "(Curious? Frustrated? Excited? Needing Validation?)"
+    example: "(Curious? Frustrated? Excited? Needing Validation?)"
   },
   {
     categoryFull: "wild card",
