@@ -170,11 +170,6 @@ main {
   transform: rotate(-2deg);
 }
 
-.deck > *:nth-child(2),
-.deck > *:nth-child(1) {
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
-}
-
 .card,
 .card-face {
   height: 30rem;
@@ -221,6 +216,7 @@ main {
   grid-template-rows: auto 8rem 1fr auto;
   transform: rotateY(0deg);
   z-index: 2;
+  border: 2px solid #eaeaea;
 }
 
 .card-back {
