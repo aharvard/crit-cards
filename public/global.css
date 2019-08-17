@@ -62,19 +62,12 @@ button {
   letter-spacing: 0.025em;
   transition: all 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-button:hover,
-button:focus {
-  transform: scale(1.1);
-}
 button:active {
   transform: scale(1);
 }
 button:disabled {
   cursor: initial;
   color: var(--gray);
-}
-button:disabled:hover {
-  transform: scale(1);
 }
 
 button .icon {
@@ -83,15 +76,26 @@ button .icon {
   transition: inherit;
 }
 
-button:hover .icon,
-button:focus .icon {
-  transform: scale(1.2) rotate(-10deg);
-}
 button:active .icon {
   transform: scale(1) rotate(0deg);
 }
-button:disabled:hover .icon {
-  transform: scale(1) rotate(0deg);
+
+@media (hover: hover) {
+  button:hover,
+  button:focus {
+    transform: scale(1.1);
+  }
+
+  button:disabled:hover {
+    transform: scale(1);
+  }
+  button:hover .icon,
+  button:focus .icon {
+    transform: scale(1.2) rotate(-10deg);
+  }
+  button:disabled:hover .icon {
+    transform: scale(1) rotate(0deg);
+  }
 }
 
 header {
