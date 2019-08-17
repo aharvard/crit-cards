@@ -58,7 +58,9 @@
 
 <header>
 
-  <button on:click={shuffleCards} style="--button-color: var(--teal);">
+  <button
+    on:click={shuffleCards}
+    style="--button-color: white; --button-text-color: var(--black);">
     <Icon name="shuffle" />
     Shuffle
   </button>
@@ -66,12 +68,14 @@
   <h1>Critique Cards</h1>
 
   {#if cardsClone.length > 0}
-    <button on:click={drawCard} style="--button-color: var(--pink);">
+    <button
+      on:click={drawCard}
+      style="--button-color: white; --button-text-color: var(--teal)">
       <Icon name="drawCard" />
       Draw
     </button>
   {:else}
-    <button on:click={drawCard} style="--button-color: black;" disabled>
+    <button on:click={drawCard} style="--button-color:var(--black);" disabled>
       <Icon name="drawCard" />
       Draw
     </button>
@@ -80,8 +84,7 @@
 </header>
 
 <main>
-  <div class="deck">
-
+  <div class="deck" aria-live="assertive">
     {#if cardsClone.length > 0}
       <CardBack showBack={true} shuffledState={isShuffled} />
     {/if}

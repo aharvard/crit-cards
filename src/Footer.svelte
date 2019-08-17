@@ -1,6 +1,6 @@
 <style>
   footer {
-    padding: 2rem 0;
+    padding: 2.5rem 0;
     color: white;
     font-weight: 400;
     letter-spacing: 0.1ch;
@@ -25,7 +25,7 @@
     width: 100%;
     background: var(--link-underline);
     z-index: -1;
-    transform: scale(0.6, 0.1) translateY(0em);
+    transform: scale(0.8, 0.1) translateY(0em);
     transform-origin: center bottom;
     transition: all 250ms cubic-bezier(0.19, 1, 0.22, 1);
   }

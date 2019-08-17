@@ -20,7 +20,10 @@
 
     <div class="card-face card-front">
       <span class="corner" aria-hidden="true">{categoryShort}</span>
-      <p class="category">{categoryFull}</p>
+      <p class="category" aria-label="category">
+        {categoryFull}
+        <span class="screen-reader-text">Category</span>
+      </p>
       <h2 class="question">
         {question}
         {#if example !== undefined}
