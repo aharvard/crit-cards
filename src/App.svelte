@@ -60,7 +60,7 @@
 
   <button
     on:click={shuffleCards}
-    style="--button-color: white; --button-text-color: var(--black);">
+    style="--button-color: white; --button-text-color: var(--gray);">
     <Icon name="shuffle" />
     Shuffle
   </button>

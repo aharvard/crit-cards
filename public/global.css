@@ -3,13 +3,13 @@
 :root {
   --black: #222;
   --pink: #dc465c;
-  --orange: #f38420;
-  --teal: #098fc7;
-  --gold: #f8b618;
+  --orange: #db6b09;
+  --teal: #0674a3;
+  --gold: #bd8400;
   --green: #24a8b2;
   --purple: #9c71b1;
-  --gray: #77909d;
-  --green: #c0b931;
+  --gray: #557383;
+  --green: #918900;
   --link-underline: white;
   --button-color: var(--purple);
   --button-text-color: white;
