@@ -246,6 +246,10 @@ main {
 }
 
 @media (max-width: 50rem) {
+  main {
+    padding: 1rem;
+  }
+
   .deck {
     grid-template-columns: 1fr;
     transform: translateX(-0.5rem);
