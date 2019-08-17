@@ -142,7 +142,6 @@ main {
   background: #f1f0ef;
   display: grid;
   place-content: center;
-  padding: 18vh;
   min-height: 91vh;
   overflow: hidden;
 }
@@ -260,7 +259,8 @@ main {
 
 @media (max-width: 50rem) {
   main {
-    padding: 4rem 3rem;
+    place-content: start center;
+    padding: 4rem 0;
   }
 
   .deck {
