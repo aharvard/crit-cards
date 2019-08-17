@@ -117,8 +117,12 @@ header button:last-of-type {
 }
 
 @media (max-width: 40rem) {
+  header {
+    padding: 0.5rem 1rem;
+  }
   header h1 {
     font-size: 6vw;
+    margin: 1rem 0 0.25rem;
   }
 }
 
@@ -247,7 +251,7 @@ main {
 
 @media (max-width: 50rem) {
   main {
-    padding: 1rem;
+    padding: 3rem;
   }
 
   .deck {
