@@ -62,11 +62,20 @@
     <Icon name="shuffle" />
     Shuffle
   </button>
+
   <h1>Critique Cards</h1>
-  <button on:click={drawCard} style="--button-color: var(--pink);">
-    <Icon name="drawCard" />
-    Draw
-  </button>
+
+  {#if cardsClone.length > 0}
+    <button on:click={drawCard} style="--button-color: var(--pink);">
+      <Icon name="drawCard" />
+      Draw
+    </button>
+  {:else}
+    <button on:click={drawCard} style="--button-color: black;" disabled>
+      <Icon name="drawCard" />
+      Draw
+    </button>
+  {/if}
 
 </header>
 

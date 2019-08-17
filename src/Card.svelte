@@ -13,15 +13,6 @@
   export let className = "";
 
   let shuffle = false;
-
-  onMount(() => {
-    console.log("card mounted");
-  });
-
-  onDestroy(() => {
-    console.log("the component is being destroyed");
-    shuffle = false;
-  });
 </script>
 
 <div class={'card category-' + categoryShort.toLowerCase() + ' ' + className}>
