@@ -16,7 +16,7 @@
   font-size: 16px;
 }
 
-@media (max-width: 27rem) {
+@media (max-width: 27em) {
   :root {
     font-size: 80%;
   }
