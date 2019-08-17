@@ -84,7 +84,7 @@
 </header>
 
 <main>
-  <div class="deck" aria-live="assertive">
+  <div class="deck" aria-live="assertive" on:click={drawCard}>
     {#if cardsClone.length > 0}
       <CardBack showBack={true} shuffledState={isShuffled} />
     {/if}
