@@ -12,6 +12,7 @@
 
   $: drawCount = 0;
   $: isShuffled = false;
+  $: shuffledCardCount = 0;
 
   function shuffle(array) {
     var m = array.length,
@@ -35,6 +36,7 @@
   function shuffleCards() {
     playedCards = [];
     cardsClone = [...cards];
+    shuffledCardCount = cardsClone.length;
     shuffle(cardsClone);
     drawCount = 0;
     setTimeout;
@@ -47,6 +49,7 @@
     playedCards = [...playedCards, shuffledCards[0]];
     shuffledCards.shift();
     drawCount += 1;
+    shuffledCardCount -= 1;
     isShuffled = false;
   }
 
@@ -61,6 +64,7 @@
   onMount(() => {
     shuffle(cardsClone);
     isShuffled = true;
+    shuffledCardCount = cardsClone.length;
   });
 </script>
 
@@ -75,24 +79,32 @@
 
   <h1>Critique Cards</h1>
 
-  {#if cardsClone.length > 0}
-    <button
-      on:click={drawCard}
-      style="--button-color: white; --button-text-color: var(--teal)">
-      <Icon name="drawCard" />
-      Draw
-    </button>
-  {/if}
+  <button
+    on:click={drawCard}
+    style="--button-color: white; --button-text-color: var(--teal)"
+    disabled={shuffledCardCount == 0}>
+    <Icon name="drawCard" />
+    Draw
+  </button>
 
 </header>
 
 <main>
   <div class="deck" aria-live="assertive" on:click={cardClick}>
+
+    <h2
+      class:hide={shuffledCardCount > 0}
+      class:display-none={shuffledCardCount > 1}>
+      Time for a shuffle!
+    </h2>
+
     {#if cardsClone.length > 0}
       <CardBack showBack={true} shuffledState={isShuffled} />
     {/if}
 
-    <h2 class:hide={drawCount !== 0}>Draw a Card!</h2>
+    <h2 class:hide={drawCount !== 0} class:display-none={drawCount > 1}>
+      Draw a card!
+    </h2>
 
     {#each playedCards as card, c (card.question.replace(/\s+/g, ''))}
       <Card
