@@ -70,10 +70,6 @@ button {
 button:active {
   transform: scale(1);
 }
-button:disabled {
-  cursor: initial;
-  color: var(--gray);
-}
 
 button .icon {
   margin-right: 0.5rem;
@@ -169,15 +165,16 @@ main {
   justify-self: center;
   grid-column: 2/3;
   color: #777;
-  opacity: 1;
+  opacity: 0;
   transform: translateY(-2rem);
   transition: all 1s ease;
   grid-auto-columns: 2/3;
   grid-row: 1/2;
-  animation: fade 1s ease;
+  animation: fadeIn 500ms 750ms ease forwards;
+  cursor: pointer;
 }
 
-@keyframes fade {
+@keyframes fadeIn {
   from {
     opacity: 0;
     transform: translateY(5rem);
@@ -189,8 +186,18 @@ main {
 }
 
 .deck > h2.hide {
-  opacity: 0;
-  transform: translateY(10rem);
+  animation: fadeOut 250ms ease forwards;
+  opacity: 1;
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(-2rem);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(5rem);
+  }
 }
 
 .card {
@@ -313,7 +320,7 @@ main {
 
   .card {
     grid-column: 1 / 2;
-    animation: layering 1s ease-in-out forwards;
+    animation: layering 750ms ease forwards;
     transform-origin: 8rem 16rem;
   }
 
@@ -322,7 +329,7 @@ main {
       transform: rotateY(-180deg) translateX(0);
       transform-origin: center;
     }
-    50% {
+    20% {
       transform: rotateY(-180deg) translateX(22rem);
       transform-origin: center;
     }

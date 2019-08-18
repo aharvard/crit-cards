@@ -50,6 +50,14 @@
     isShuffled = false;
   }
 
+  function cardClick() {
+    if (cardsClone.length > 0) {
+      drawCard();
+    } else {
+      shuffleCards();
+    }
+  }
+
   onMount(() => {
     shuffle(cardsClone);
     isShuffled = true;
@@ -74,17 +82,12 @@
       <Icon name="drawCard" />
       Draw
     </button>
-  {:else}
-    <button on:click={drawCard} style="--button-color:var(--black);" disabled>
-      <Icon name="drawCard" />
-      Draw
-    </button>
   {/if}
 
 </header>
 
 <main>
-  <div class="deck" aria-live="assertive" on:click={drawCard}>
+  <div class="deck" aria-live="assertive" on:click={cardClick}>
     {#if cardsClone.length > 0}
       <CardBack showBack={true} shuffledState={isShuffled} />
     {/if}
