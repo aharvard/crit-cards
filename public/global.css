@@ -21,6 +21,11 @@
     font-size: 80%;
   }
 }
+@media (min-width: 75em) {
+  :root {
+    font-size: 1.25vw;
+  }
+}
 
 * {
   box-sizing: border-box;
@@ -100,9 +105,9 @@ button:active .icon {
 
 header {
   display: grid;
-  grid-template-columns: auto minmax(auto, 60rem) auto;
+  grid-template-columns: auto minmax(auto, 40rem) auto;
   place-items: center;
-  grid-gap: 1rem;
+  grid-gap: 2rem;
   padding: 0.5rem 1rem;
   background: white;
   border-bottom: 2px solid #eaeaea;
@@ -159,6 +164,35 @@ main {
   z-index: 1;
 }
 
+.deck > h2 {
+  align-self: center;
+  justify-self: center;
+  grid-column: 2/3;
+  color: #777;
+  opacity: 1;
+  transform: translateY(-2rem);
+  transition: all 1s ease;
+  grid-auto-columns: 2/3;
+  grid-row: 1/2;
+  animation: fade 1s ease;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-2rem);
+  }
+}
+
+.deck > h2.hide {
+  opacity: 0;
+  transform: translateY(10rem);
+}
+
 .card {
   perspective: 2000px;
   transition: 500ms all ease;
@@ -190,6 +224,7 @@ main {
 .card-face {
   height: 30rem;
   width: 20rem;
+  cursor: pointer;
 }
 
 .card-flipper {
@@ -270,6 +305,10 @@ main {
   .deck {
     grid-template-columns: 1fr;
     transform: translateX(-0.5rem);
+  }
+
+  .deck > h2 {
+    display: none;
   }
 
   .card {

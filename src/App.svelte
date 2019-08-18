@@ -89,6 +89,8 @@
       <CardBack showBack={true} shuffledState={isShuffled} />
     {/if}
 
+    <h2 class:hide={drawCount !== 0}>Draw a Card!</h2>
+
     {#each playedCards as card, c (card.question.replace(/\s+/g, ''))}
       <Card
         question={card.question}
