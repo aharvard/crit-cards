@@ -171,7 +171,7 @@ main {
   color: #777;
   opacity: 0;
   transform: translateY(-2rem);
-  transition: all 1s ease;
+  transition: transform 1s ease;
   grid-auto-columns: 2/3;
   grid-row: 1/2;
   animation: fadeIn 500ms 750ms ease forwards;
@@ -205,22 +205,10 @@ main {
 
 @keyframes fadeOut {
   0% {
-    display: none;
     opacity: 1;
     transform: translateY(-2rem);
-  }
-  1% {
-    display: inline;
-    opacity: 1;
-    transform: translateY(-2rem);
-  }
-  99% {
-    display: inline;
-    opacity: 0;
-    transform: translateY(5rem);
   }
   100% {
-    display: none;
     opacity: 0;
     transform: translateY(5rem);
   }
