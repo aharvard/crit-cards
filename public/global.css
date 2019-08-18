@@ -67,24 +67,6 @@ button {
   letter-spacing: 0.025em;
   transition: all 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-button:active {
-  transform: scale(1);
-}
-
-button:disabled {
-  visibility: hidden;
-}
-
-button .icon {
-  margin-right: 0.5rem;
-  font-size: 150%;
-  transition: inherit;
-}
-
-button:active .icon {
-  transform: scale(1) rotate(0deg);
-}
-
 @media (hover: hover) {
   button:hover,
   button:focus {
@@ -101,6 +83,24 @@ button:active .icon {
   button:disabled:hover .icon {
     transform: scale(1) rotate(0deg);
   }
+}
+
+button:active {
+  transform: scale(1);
+}
+
+button:disabled {
+  visibility: hidden;
+}
+
+button .icon {
+  margin-right: 0.5rem;
+  font-size: 150%;
+  transition: inherit;
+}
+
+button:active .icon {
+  transform: scale(1) rotate(0deg);
 }
 
 header {
