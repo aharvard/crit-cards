@@ -208,7 +208,7 @@ export const cards = [
     categoryFull: "experience",
     categoryShort: "Exp",
     question:
-      "How does the speed of out application compare to our competitors?"
+      "How does the speed of our application compare to our competitors?"
   },
   {
     categoryFull: "experience",
