@@ -1,8 +1,4 @@
 <script>
-  import { onMount } from "svelte";
-  import { onDestroy } from "svelte";
-  import { beforeUpdate } from "svelte";
-
   import CardBack from "./CardBack.svelte";
 
   export let categoryFull = "";
