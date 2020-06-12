@@ -1,458 +1,458 @@
 @import url("https://fonts.googleapis.com/css?family=Red+Hat+Display:400,500,700&display=swap");
 
 :root {
-  --black: #222;
-  --pink: #dc465c;
-  --orange: #db6b09;
-  --teal: #0674a3;
-  --gold: #bd8400;
-  --green: #24a8b2;
-  --purple: #9c71b1;
-  --gray: #557383;
-  --green: #918900;
-  --link-underline: white;
-  --button-color: var(--purple);
-  --button-text-color: white;
-  font-size: 16px;
+    --black: #222;
+    --pink: #dc465c;
+    --orange: #db6b09;
+    --teal: #0674a3;
+    --gold: #bd8400;
+    --green: #24a8b2;
+    --purple: #9c71b1;
+    --gray: #557383;
+    --green: #918900;
+    --link-underline: white;
+    --button-color: var(--purple);
+    --button-text-color: white;
+    font-size: 16px;
 }
 
 @media (max-width: 23em) {
-  :root {
-    font-size: 12px;
-  }
+    :root {
+        font-size: 12px;
+    }
 }
 @media (min-width: 50em) {
-  :root {
-    font-size: 18px;
-  }
+    :root {
+        font-size: 18px;
+    }
 }
 @media (min-width: 75em) {
-  :root {
-    font-size: 20px;
-  }
+    :root {
+        font-size: 20px;
+    }
 }
 @media (min-width: 100em) {
-  :root {
-    font-size: 22px;
-  }
+    :root {
+        font-size: 22px;
+    }
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .screen-reader-text {
-  border: 0;
-  clip: rect(1px, 1px, 1px, 1px);
-  clip-path: inset(50%);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-  word-wrap: normal !important;
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    word-wrap: normal !important;
 }
 
 body {
-  font-family: "Red Hat Display", sans-serif;
-  font-weight: 700;
-  padding: 0;
-  margin: 0;
-  background: var(--black);
+    font-family: "Red Hat Display", sans-serif;
+    font-weight: 700;
+    padding: 0;
+    margin: 0;
+    background: var(--black);
 }
 
 button {
-  background: var(--button-color);
-  border-radius: 0.25em;
-  border: none;
-  color: var(--button-text-color);
-  font-size: 1rem;
-  margin: 1rem 0;
-  padding: 0.75rem;
-  display: inline-flex;
-  align-items: center;
-  cursor: pointer;
-  font-weight: 700;
-  letter-spacing: 0.025em;
-  transition: all 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: var(--button-color);
+    border-radius: 0.25em;
+    border: none;
+    color: var(--button-text-color);
+    font-size: 1rem;
+    margin: 1rem 0;
+    padding: 0.75rem;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 700;
+    letter-spacing: 0.025em;
+    transition: all 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 @media (hover: hover) {
-  button:hover,
-  button:focus {
-    transform: scale(1.1);
-  }
+    button:hover,
+    button:focus {
+        transform: scale(1.1);
+    }
 
-  button:disabled:hover {
-    transform: scale(1);
-  }
-  button:hover .icon,
-  button:focus .icon {
-    transform: scale(1.2) rotate(-10deg);
-  }
-  button:disabled:hover .icon {
-    transform: scale(1) rotate(0deg);
-  }
+    button:disabled:hover {
+        transform: scale(1);
+    }
+    button:hover .icon,
+    button:focus .icon {
+        transform: scale(1.2) rotate(-10deg);
+    }
+    button:disabled:hover .icon {
+        transform: scale(1) rotate(0deg);
+    }
 }
 
 button:active {
-  transform: scale(1);
+    transform: scale(1);
 }
 
 button:disabled {
-  visibility: hidden;
+    visibility: hidden;
 }
 
 button .icon {
-  margin-right: 0.5rem;
-  font-size: 150%;
-  transition: inherit;
+    margin-right: 0.5rem;
+    font-size: 150%;
+    transition: inherit;
 }
 
 button:active .icon {
-  transform: scale(1) rotate(0deg);
+    transform: scale(1) rotate(0deg);
 }
 
 header {
-  display: grid;
-  grid-template-columns: auto minmax(auto, 40rem) auto;
-  place-items: center;
-  grid-gap: 2rem;
-  padding: 0.5rem 1rem;
-  background: white;
-  border-bottom: 2px solid #eaeaea;
-  min-height: 9vh;
-  max-height: 5rem;
+    display: grid;
+    grid-template-columns: auto minmax(auto, 40rem) auto;
+    place-items: center;
+    grid-gap: 2rem;
+    padding: 0.5rem 1rem;
+    background: white;
+    border-bottom: 2px solid #eaeaea;
+    min-height: 9vh;
+    max-height: 5rem;
 }
 
 header > * {
-  margin: 0;
+    margin: 0;
 }
 
 header h1 {
-  text-align: center;
-  line-height: 1;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 1rem;
+    text-align: center;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 1rem;
 }
 
 header button:first-of-type {
-  justify-self: right;
+    justify-self: right;
 }
 
 header button:last-of-type {
-  justify-self: left;
+    justify-self: left;
 }
 
 @media (max-width: 40rem) {
-  header {
-    grid-template-columns: 5.5rem minmax(auto, 60rem) 5.5rem;
-  }
-  header button:first-of-type {
-    justify-self: left;
-  }
-  header button:last-of-type {
-    justify-self: right;
-  }
+    header {
+        grid-template-columns: 5.5rem minmax(auto, 60rem) 5.5rem;
+    }
+    header button:first-of-type {
+        justify-self: left;
+    }
+    header button:last-of-type {
+        justify-self: right;
+    }
 }
 
 main {
-  background: #f1f0ef;
-  display: grid;
-  place-content: center;
-  min-height: 91vh;
-  overflow: hidden;
+    background: #f1f0ef;
+    display: grid;
+    place-content: center;
+    min-height: 91vh;
+    overflow: hidden;
 }
 
 .deck {
-  display: grid;
-  grid-template-columns: 20rem 20rem;
-  grid-template-rows: 30rem;
-  margin: auto;
-  gap: 1rem;
-  z-index: 1;
+    display: grid;
+    grid-template-columns: 20rem 20rem;
+    grid-template-rows: 30rem;
+    margin: auto;
+    gap: 1rem;
+    z-index: 1;
 }
 
 .deck > h2 {
-  align-self: center;
-  justify-self: center;
-  grid-column: 2/3;
-  color: #777;
-  opacity: 0;
-  transform: translateY(-2rem);
-  transition: transform 1s ease;
-  grid-auto-columns: 2/3;
-  grid-row: 1/2;
-  animation: fadeIn 500ms 750ms ease forwards;
-  cursor: pointer;
+    align-self: center;
+    justify-self: center;
+    grid-column: 2/3;
+    color: #777;
+    opacity: 0;
+    transform: translateY(-2rem);
+    transition: transform 1s ease;
+    grid-auto-columns: 2/3;
+    grid-row: 1/2;
+    animation: fadeIn 500ms 750ms ease forwards;
+    cursor: pointer;
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(5rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(-2rem);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(5rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(-2rem);
+    }
 }
 
 .deck > h2:first-child {
-  grid-column: 1 / 2;
-  z-index: -3;
+    grid-column: 1 / 2;
+    z-index: -3;
 }
 
 .deck > h2.hide {
-  animation: fadeOut 250ms ease forwards;
-  opacity: 1;
+    animation: fadeOut 250ms ease forwards;
+    opacity: 1;
 }
 
 .display-none {
-  display: none;
+    display: none;
 }
 
 @keyframes fadeOut {
-  0% {
-    opacity: 1;
-    transform: translateY(-2rem);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(5rem);
-  }
+    0% {
+        opacity: 1;
+        transform: translateY(-2rem);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(5rem);
+    }
 }
 
 .card {
-  perspective: 2000px;
-  transition: 500ms all ease;
-  grid-column: 2 / 3;
-  grid-row: 1 / 2;
-  position: relative;
-  animation: layering 750ms ease-in-out forwards;
-  transform-origin: -10rem 17rem;
+    perspective: 2000px;
+    transition: 500ms all ease;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    position: relative;
+    animation: layering 750ms ease-in-out forwards;
+    transform-origin: -10rem 17rem;
 }
 
 @keyframes layering {
-  0% {
-    z-index: -2;
-    transform: rotate(-2deg) translateX(0rem) translateY(0rem);
-  }
-  40% {
-    z-index: 1;
-  }
-  100% {
-    transform: rotate(2deg) translateX(1rem) translateY(-1rem);
-  }
+    0% {
+        z-index: -2;
+        transform: rotate(-2deg) translateX(0rem) translateY(0rem);
+    }
+    40% {
+        z-index: 1;
+    }
+    100% {
+        transform: rotate(2deg) translateX(1rem) translateY(-1rem);
+    }
 }
 
 .deck > *:nth-child(2) {
-  transform: rotate(-2deg);
+    transform: rotate(-2deg);
 }
 
 .card,
 .card-face {
-  height: 30rem;
-  width: 20rem;
-  cursor: pointer;
+    height: 30rem;
+    width: 20rem;
+    cursor: pointer;
 }
 
 .card-flipper {
-  position: relative;
-  transform-style: preserve-3d;
-  animation: inherit;
-  animation-name: flip;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: inherit;
+    animation-name: flip;
 }
 
 .card-flipper.shuffle {
-  animation-direction: reverse;
+    animation-direction: reverse;
 }
 
 @keyframes flip {
-  from {
-    transform: rotateY(-180deg) translateX(11rem);
-    transform-origin: 5rem;
-  }
-  to {
-    transform: rotateY(0deg) translateX(0);
-    transform-origin: 1rem;
-  }
+    from {
+        transform: rotateY(-180deg) translateX(11rem);
+        transform-origin: 5rem;
+    }
+    to {
+        transform: rotateY(0deg) translateX(0);
+        transform-origin: 1rem;
+    }
 }
 
 .card-face {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  border-radius: 1rem;
-  display: -ms-grid;
-  display: grid;
-  grid-template-columns: 1fr;
-  left: 0;
-  padding: 1.5rem;
-  position: absolute;
-  top: 0;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 1rem;
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: 1fr;
+    left: 0;
+    padding: 1.5rem;
+    position: absolute;
+    top: 0;
 }
 
 .card-front {
-  background: white;
-  grid-template-rows: auto 8rem 1fr auto;
-  transform: rotateY(0deg);
-  z-index: 2;
-  border: 2px solid #eaeaea;
+    background: white;
+    grid-template-rows: auto 8rem 1fr auto;
+    transform: rotateY(0deg);
+    z-index: 2;
+    border: 2px solid #eaeaea;
 }
 
 .card-back {
-  background: #222;
-  background: url("card-back-texture.svg"), radial-gradient(#222, #111);
-  background-size: 100%;
-  grid-template-rows: auto 1fr auto;
-  transform: rotateY(180deg);
-  z-index: -2;
+    background: #222;
+    background: url("card-back-texture.svg"), radial-gradient(#222, #111);
+    background-size: 100%;
+    grid-template-rows: auto 1fr auto;
+    transform: rotateY(180deg);
+    z-index: -2;
 }
 
 .card-back.shuffled {
-  animation: shuffle 750ms cubic-bezier(0, 0, 0, 1);
-  animation-iteration-count: 1;
+    animation: shuffle 750ms cubic-bezier(0, 0, 0, 1);
+    animation-iteration-count: 1;
 }
 @keyframes shuffle {
-  to {
-    transform: rotate(-362deg);
-  }
+    to {
+        transform: rotate(-362deg);
+    }
 }
 
 .showBack {
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
-  transform: rotateY(0deg);
-  position: relative;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    transform: rotateY(0deg);
+    position: relative;
 }
 
 @media (max-width: 50rem) {
-  main {
-    place-content: start center;
-    padding: 4rem 0;
-  }
+    main {
+        place-content: start center;
+        padding: 4rem 0;
+    }
 
-  .deck {
-    grid-template-columns: 1fr;
-    transform: translateX(-0.5rem);
-  }
+    .deck {
+        grid-template-columns: 1fr;
+        transform: translateX(-0.5rem);
+    }
 
-  .deck > h2 {
-    display: none;
-  }
+    .deck > h2 {
+        display: none;
+    }
 
-  .card {
-    grid-column: 1 / 2;
-    animation: layering 750ms ease forwards;
-    transform-origin: 8rem 16rem;
-  }
+    .card {
+        grid-column: 1 / 2;
+        animation: layering 750ms ease forwards;
+        transform-origin: 8rem 16rem;
+    }
+}
 
-  @keyframes flip {
+@keyframes flip {
     0% {
-      transform: rotateY(-180deg) translateX(0);
-      transform-origin: center;
+        transform: rotateY(-180deg) translateX(0);
+        transform-origin: center;
     }
     20% {
-      transform: rotateY(-180deg) translateX(22rem);
-      transform-origin: center;
+        transform: rotateY(-180deg) translateX(22rem);
+        transform-origin: center;
     }
 
     100% {
-      transform: rotateY(0deg) translateX(0);
-      transform-origin: center;
+        transform: rotateY(0deg) translateX(0);
+        transform-origin: center;
     }
-  }
+}
 
-  @keyframes layering {
+@keyframes layering {
     0% {
-      z-index: -2;
-      transform: rotate(-2deg) translateX(0rem) translateY(0rem);
+        z-index: -2;
+        transform: rotate(-2deg) translateX(0rem) translateY(0rem);
     }
     80% {
-      z-index: 1;
+        z-index: 1;
     }
     100% {
-      transform: rotate(2deg) translateX(1rem) translateY(-1rem);
+        transform: rotate(2deg) translateX(1rem) translateY(-1rem);
     }
-  }
 }
 
 .category {
-  align-self: center;
-  font-size: 0.8rem;
-  justify-self: center;
-  letter-spacing: 0.2rem;
-  text-transform: uppercase;
-  letter-spacing: 0.25em;
+    align-self: center;
+    font-size: 0.8rem;
+    justify-self: center;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
 }
 
 .category::after {
-  background: var(--card-color);
-  content: "";
-  display: block;
-  height: 0.25rem;
-  margin: 0.5rem auto;
-  width: 2rem;
+    background: var(--card-color);
+    content: "";
+    display: block;
+    height: 0.25rem;
+    margin: 0.5rem auto;
+    width: 2rem;
 }
 
 .question {
-  font-size: 1.4rem;
-  text-align: center;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  line-height: 1.3;
-  margin: 0;
+    font-size: 1.4rem;
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    line-height: 1.3;
+    margin: 0;
 }
 
 .example {
-  display: block;
-  font-size: 1rem;
-  margin-top: 1rem;
+    display: block;
+    font-size: 1rem;
+    margin-top: 1rem;
 }
 
 .corner {
-  color: var(--card-color);
-  font-size: 2rem;
-  text-transform: capitalize;
-  letter-spacing: 0.1em;
+    color: var(--card-color);
+    font-size: 2rem;
+    text-transform: capitalize;
+    letter-spacing: 0.1em;
 }
 
 .corner ~ .corner {
-  transform: rotate(180deg);
+    transform: rotate(180deg);
 }
 
 .card-back .corner {
-  color: white;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  width: 8ch;
+    color: white;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    width: 8ch;
 }
 
 .card-back .corner:last-child {
-  justify-self: right;
+    justify-self: right;
 }
 .category-br {
-  --card-color: var(--pink);
+    --card-color: var(--pink);
 }
 .category-fn {
-  --card-color: var(--orange);
+    --card-color: var(--orange);
 }
 .category-obj {
-  --card-color: var(--teal);
+    --card-color: var(--teal);
 }
 .category-vl {
-  --card-color: var(--gold);
+    --card-color: var(--gold);
 }
 .category-usr {
-  --card-color: var(--green);
+    --card-color: var(--green);
 }
 .category-\? {
-  --card-color: var(--purple);
+    --card-color: var(--purple);
 }
 .category-exp {
-  --card-color: var(--gray);
+    --card-color: var(--gray);
 }
 .category-cn {
-  --card-color: var(--green);
+    --card-color: var(--green);
 }
