@@ -344,12 +344,16 @@ main {
 
     .card {
         grid-column: 1 / 2;
-        animation: layering 750ms ease forwards;
+        animation: mobileLayering 750ms ease forwards;
         transform-origin: 8rem 16rem;
+    }
+    .card-flipper {
+        animation-name: mobileFlip;
     }
 }
 
-@keyframes flip {
+/* mobile keyframes */
+@keyframes mobileFlip {
     0% {
         transform: rotateY(-180deg) translateX(0);
         transform-origin: center;
@@ -365,7 +369,7 @@ main {
     }
 }
 
-@keyframes layering {
+@keyframes mobileLayering {
     0% {
         z-index: -2;
         transform: rotate(-2deg) translateX(0rem) translateY(0rem);
