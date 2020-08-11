@@ -27,6 +27,6 @@
 
 <header>
   <Button on:click="{shuffleClick}" text="Shuffle" icon="shuffle" />
-  <h1>Critiqe Cards</h1>
+  <h1>Critique Cards</h1>
   <Button on:click="{drawClick}" text="Draw Card" disabledState="{deckSpent}" />
 </header>
