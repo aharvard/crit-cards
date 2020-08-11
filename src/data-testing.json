@@ -1,0 +1,11 @@
+[
+  {
+    "category": "brand",
+    "question": "Does the design align with the brand values?",
+    "example": "like this or that"
+  },
+  {
+    "category": "function",
+    "question": "What are the minimal, necessary elements for the design to perform it's task?"
+  }
+]

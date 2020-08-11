@@ -1,119 +1,81 @@
+<style>
+  .deck {
+    display: grid;
+    transform: translateX(calc((-0.5 * var(--card-width)) - 1rem))
+      rotate(calc(0.5 * var(--card-rotate-offset)));
+  }
+  .deck > :global(*) {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+  }
+  .deck > :global(.card-back) {
+    z-index: -100;
+  }
+</style>
+
 <script>
   import { onMount } from "svelte";
-  import Card from "./Card.svelte";
-  import CardBack from "./CardBack.svelte";
-  import Footer from "./Footer.svelte";
-  import Icon from "./Icon.svelte";
-  import { cards } from "./content.js";
+  import { shuffle } from "./utils.js";
+  import cardData from "./data.json";
 
-  $: cardsClone = [...cards];
-  $: shuffledCards = [];
-  $: playedCards = [];
+  import Card from "./components/Card.svelte";
+  import CardBack from "./components/CardBack.svelte";
+  import Header from "./components/Header.svelte";
+  import Main from "./components/Main.svelte";
+  import Footer from "./components/Footer.svelte";
 
-  $: drawCount = 0;
-  $: isShuffled = false;
-  $: shuffledCardCount = 0;
+  $: deckSpent = false;
 
-  function shuffle(array) {
-    var m = array.length,
-      t,
-      i;
+  $: deckOfCards = cardData.map((card, index) => ({
+    ...card,
+    drawn: false,
+    id: index,
+  }));
+  $: undrawnCards = deckOfCards.filter((card) => !card.drawn);
+  $: drawnCards = deckOfCards.filter((card) => card.drawn);
 
-    // While there remain elements to shuffle…
-    while (m) {
-      // Pick a remaining element…
-      i = Math.floor(Math.random() * m--);
+  let deckPosition = 0;
 
-      // And swap it with the current element.
-      t = array[m];
-      array[m] = array[i];
-      array[i] = t;
-    }
-
-    return array;
-  }
+  onMount(() => shuffle(deckOfCards));
 
   function shuffleCards() {
-    playedCards = [];
-    cardsClone = [...cards];
-    shuffledCardCount = cardsClone.length;
-    shuffle(cardsClone);
-    drawCount = 0;
-    setTimeout;
-    isShuffled = true;
-    setTimeout(() => (isShuffled = false), 750);
+    deckOfCards = shuffle(deckOfCards);
+    deckOfCards.forEach((element) => {
+      element.drawn = false;
+    });
+    deckPosition = 0;
+    deckSpent = false;
   }
 
   function drawCard() {
-    shuffledCards = cardsClone;
-    playedCards = [...playedCards, shuffledCards[0]];
-    shuffledCards.shift();
-    drawCount += 1;
-    shuffledCardCount -= 1;
-    isShuffled = false;
-  }
-
-  function cardClick() {
-    if (cardsClone.length > 0) {
-      drawCard();
+    if (undrawnCards.length > 1) {
+      console.log(deckPosition);
+      deckOfCards[deckPosition].drawn = true;
+      deckPosition += 1;
+      console.log(deckPosition);
     } else {
-      shuffleCards();
+      deckOfCards[deckPosition].drawn = true;
+      deckSpent = true;
     }
   }
-
-  onMount(() => {
-    shuffle(cardsClone);
-    isShuffled = true;
-    shuffledCardCount = cardsClone.length;
-  });
 </script>
 
-<header>
-
-  <button
-    on:click={shuffleCards}
-    style="--button-color: white; --button-text-color: var(--purple);">
-    <Icon name="shuffle" />
-    Shuffle
-  </button>
-
-  <h1>Critique Cards</h1>
-
-  <button
-    on:click={drawCard}
-    style="--button-color: white; --button-text-color: var(--teal)"
-    disabled={shuffledCardCount == 0}>
-    <Icon name="drawCard" />
-    Draw
-  </button>
-
-</header>
-
-<main>
-  <div class="deck" aria-live="assertive" on:click={cardClick}>
-
-    <h2
-      class:hide={shuffledCardCount > 0}
-      class:display-none={shuffledCardCount > 1}>
-      Time for a shuffle!
-    </h2>
-
-    {#if cardsClone.length > 0}
-      <CardBack showBack={true} shuffledState={isShuffled} />
+<Header shuffleClick="{shuffleCards}" drawClick="{drawCard}" {deckSpent} />
+<Main>
+  <div class="deck">
+    {#if undrawnCards.length > 0}
+      <CardBack />
     {/if}
-
-    <h2 class:hide={drawCount !== 0} class:display-none={drawCount > 1}>
-      Draw a card!
-    </h2>
-
-    {#each playedCards as card, c (card.question.replace(/\s+/g, ''))}
+    {#each drawnCards as card, i (card.id)}
       <Card
-        question={card.question}
-        categoryFull={card.categoryFull}
-        categoryShort={card.categoryShort}
-        example={card.example} />
+        category="{card.category}"
+        question="{card.question}"
+        example="{card.example || null}"
+        index="{i}"
+        id="{card.id}"
+        drawn="{card.drawn}"
+      />
     {/each}
   </div>
-</main>
-
+</Main>
 <Footer />
