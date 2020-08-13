@@ -7,7 +7,7 @@
     height: var(--card-height);
     background: var(--black);
     color: white;
-    background: url("/media/card-back-texture.svg"), radial-gradient(#222, #111);
+    background: url("media/card-back-texture.svg"), radial-gradient(#333, #111);
     background-size: 100%;
     display: flex;
   }
@@ -26,7 +26,6 @@
 </style>
 
 <script>
-  import "../assets/card-back-texture.svg";
   const cardTitle = "Critique Cards";
 </script>
 
