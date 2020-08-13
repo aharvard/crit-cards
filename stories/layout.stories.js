@@ -1,10 +1,12 @@
 import Header from '../src/components/Header.svelte';
 import Main from '../src/components/Main.svelte';
 import Footer from '../src/components/Footer.svelte';
-import '../public/global.css';
 
 export default {
   title: 'Layout',
+  parameters: {
+    layout: 'fullscreen',
+  },
 };
 
 export const header = () => ({

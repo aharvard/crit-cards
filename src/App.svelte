@@ -17,6 +17,7 @@
   import { onMount } from "svelte";
   import { shuffle } from "./utils.js";
   import cardData from "./data.json";
+  import "./assets/global.css";
 
   import Card from "./components/Card.svelte";
   import CardBack from "./components/CardBack.svelte";

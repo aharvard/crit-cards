@@ -7,16 +7,26 @@
     height: var(--card-height);
     background: var(--black);
     color: white;
-
-    background: url("/card-back-texture.svg"), radial-gradient(#222, #111);
+    background: url("/media/card-back-texture.svg"), radial-gradient(#222, #111);
     background-size: 100%;
+    display: flex;
   }
   .title {
-    user-select: none;
+    flex: 1 1 auto;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    line-height: 1.1;
+  }
+  .title:last-of-type {
+    transform: rotate(180deg);
   }
 </style>
 
 <script>
+  import "../assets/card-back-texture.svg";
   const cardTitle = "Critique Cards";
 </script>
 

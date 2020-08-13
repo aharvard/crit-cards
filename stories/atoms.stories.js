@@ -1,9 +1,11 @@
 import Button from './views/Button.svelte';
 import Link from './views/Link.svelte';
-import '../public/global.css';
 
 export default {
   title: 'Atoms',
+  parameters: {
+    layout: 'fullscreen',
+  },
 };
 
 export const button = () => ({
