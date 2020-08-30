@@ -772,13 +772,13 @@ var app = (function () {
     			t1 = space();
     			div1 = element("div");
     			div1.textContent = `${cardTitle}`;
-    			attr_dev(div0, "class", "title svelte-1m47e15");
-    			add_location(div0, file, 32, 2, 729);
-    			attr_dev(div1, "class", "title svelte-1m47e15");
-    			add_location(div1, file, 33, 2, 768);
-    			attr_dev(div2, "class", "card-back svelte-1m47e15");
+    			attr_dev(div0, "class", "title svelte-19abamj");
+    			add_location(div0, file, 32, 2, 725);
+    			attr_dev(div1, "class", "title svelte-19abamj");
+    			add_location(div1, file, 33, 2, 764);
+    			attr_dev(div2, "class", "card-back svelte-19abamj");
     			attr_dev(div2, "aria-hidden", "true");
-    			add_location(div2, file, 31, 0, 684);
+    			add_location(div2, file, 31, 0, 680);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");

@@ -7,7 +7,7 @@
     height: var(--card-height);
     background: var(--black);
     color: white;
-    background: url("media/card-back-texture.svg"), radial-gradient(#333, #111);
+    background: url("./card-back-texture.svg"), radial-gradient(#333, #111);
     background-size: 100%;
     display: flex;
   }

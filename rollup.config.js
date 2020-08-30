@@ -1,4 +1,4 @@
-import svelte  from "rollup-plugin-svelte";
+import svelte from "rollup-plugin-svelte";
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import livereload from "rollup-plugin-livereload";
@@ -12,7 +12,7 @@ export default {
   input: "src/main.js",
   output: {
     sourcemap: true,
-        format: "iife",
+    format: "iife",
     name: "app",
     file: "public/static/bundle.js",
   },
@@ -28,7 +28,7 @@ export default {
       },
     }),
     copy({
-      targets: [{ src: "src/global.css", dest: "public/static" }],
+      targets: [{ src: "src/static/*.*", dest: "public/static" }],
     }),
 
     // If you have external dependencies installed from
