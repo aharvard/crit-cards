@@ -2,7 +2,8 @@ import CardFront from "./views/CardFront.svelte";
 import SideBySide from "./views/SideBySide.svelte";
 import CardBack from "./views/CardBack.svelte";
 import Flipper from "./views/Flipper.svelte";
-import "../src/global.css";
+import "../public/static/card-back-texture.svg";
+import "../public/static/global.css";
 
 export default {
   title: "Card",

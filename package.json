@@ -3,12 +3,10 @@
   "version": "1.0.0",
   "scripts": {
     "build": "rollup -c",
-    "autobuild": "rollup -c -w",
-    "dev": "run-p start:dev autobuild",
-    "start": "sirv public",
-    "start:dev": "sirv public --dev",
-    "storybook": "start-storybook",
-    "build-storybook": "build-storybook",
+    "watch": "rollup -c -w",
+    "serve": "sirv public --dev",
+    "storybook": "start-storybook -s ./public/static -p 9001",
+    "start": "run-p watch serve storybook",
     "chromatic": "npx chromatic --project-token t7kgf333xjt"
   },
   "devDependencies": {
