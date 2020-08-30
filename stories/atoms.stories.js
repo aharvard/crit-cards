@@ -3,9 +3,6 @@ import Link from './views/Link.svelte';
 
 export default {
   title: 'Atoms',
-  parameters: {
-    layout: 'fullscreen',
-  },
 };
 
 export const button = () => ({

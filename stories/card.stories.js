@@ -1,13 +1,13 @@
-import CardFront from './views/CardFront.svelte';
-import SideBySide from './views/SideBySide.svelte';
-import CardBack from './views/CardBack.svelte';
-import Flipper from './views/Flipper.svelte';
-// import '../public/global.css';
+import CardFront from "./views/CardFront.svelte";
+import SideBySide from "./views/SideBySide.svelte";
+import CardBack from "./views/CardBack.svelte";
+import Flipper from "./views/Flipper.svelte";
+import "../src/global.css";
 
 export default {
-  title: 'Card',
+  title: "Card",
   parameters: {
-    layout: 'fullscreen',
+    layout: "fullscreen",
   },
 };
 

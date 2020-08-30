@@ -3,6 +3,4 @@
   import Main from "../../src/components/Main.svelte";
 </script>
 
-<Main>
-  <Button text="Button Text" />
-</Main>
+<Button text="Button Text" />

@@ -1,9 +1,9 @@
-import App from '../src/App.svelte';
+import App from "../src/App.svelte";
 
 export default {
-  title: 'App',
+  title: "App",
   parameters: {
-    layout: 'fullscreen',
+    layout: "fullscreen",
   },
 };
 

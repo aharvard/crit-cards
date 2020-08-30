@@ -7,6 +7,4 @@
   import Main from "../../src/components/Main.svelte";
 </script>
 
-<Main>
-  <Link text="Link Text" />
-</Main>
+<Link text="Link Text" />
