@@ -29,6 +29,7 @@ export default {
     }),
     copy({
       targets: [{ src: "src/static/*.*", dest: "public/static" }],
+      copyOnce: true,
     }),
 
     // If you have external dependencies installed from
@@ -41,7 +42,7 @@ export default {
 
     // Watch the `public` directory and refresh the
     // browser on changes when not in production
-    !production && livereload("public"),
+    !production && livereload("public/static"),
 
     // If we're building for production (npm run build
     // instead of npm run dev), minify
